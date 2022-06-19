@@ -11,5 +11,16 @@
 
 --SELECT * FROM EmployeePayroll WHERE EmpName = 'jaikumar';
 
-SELECT * FROM EmployeePayroll WHERE StartDate BETWEEN '2021-07-21' AND CAST(GETDATE() AS DATE);
+--SELECT * FROM EmployeePayroll WHERE StartDate BETWEEN '2021-07-21' AND CAST(GETDATE() AS DATE);
+
+--ALTER TABLE EmployeePayroll ADD Gender char;
+
+--UPDATE EmployeePayroll SET Gender = 'M' WHERE EmpName='jaikumar' OR EmpName ='sathish' OR EmpName ='Rohan';
+
+UPDATE EmployeePayroll SET Gender = 'F' WHERE StartDate = '2021-07-01';
+
+SELECT * FROM EmployeePayroll;
+
+
+
 
