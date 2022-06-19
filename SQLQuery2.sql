@@ -17,10 +17,18 @@
 
 --UPDATE EmployeePayroll SET Gender = 'M' WHERE EmpName='jaikumar' OR EmpName ='sathish' OR EmpName ='Rohan';
 
-UPDATE EmployeePayroll SET Gender = 'F' WHERE StartDate = '2021-07-01';
+--UPDATE EmployeePayroll SET Gender = 'F' WHERE StartDate = '2021-07-01';
 
-SELECT * FROM EmployeePayroll;
+--SELECT * FROM EmployeePayroll;
 
+--SELECT MIN(Salary) FROM EmployeePayroll WHERE Gender='M';
 
+--SELECT MAX(Salary) FROM EmployeePayroll WHERE Gender='F';
+
+SELECT SUM(Salary) FROM EmployeePayroll GROUP BY Gender;
+
+SELECT AVG(Salary) FROM EmployeePayroll WHERE Gender='M';
+
+SELECT COUNT(EmpName) FROM EmployeePayroll WHERE Gender='M';
 
 
