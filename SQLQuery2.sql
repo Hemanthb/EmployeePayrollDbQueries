@@ -46,4 +46,10 @@ SELECT * FROM EmployeePayroll;
 -- UC-> 9 --
 ALTER TABLE EmployeePayroll ADD BasicPay FLOAT,Deductions FLOAT,TaxablePay FLOAT,IncomeTax FLOAT,NetPay FLOAT;
 
+-- UC -> 10 --
 
+INSERT INTO EmployeePayroll VALUES
+('Terissa',35000, '2019-10-03','F',9989899810, 'Chennai', 'Marketing',35000, 3000, 1000, 100, 30900);
+
+INSERT INTO EmployeePayroll VALUES
+('Terissa',35000, '2019-10-03','F',9989899810, 'Chennai', 'Sales',35000, 3000, 1000, 100, 30900);
