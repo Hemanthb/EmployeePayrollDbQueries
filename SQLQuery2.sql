@@ -25,10 +25,21 @@
 
 --SELECT MAX(Salary) FROM EmployeePayroll WHERE Gender='F';
 
-SELECT SUM(Salary) FROM EmployeePayroll GROUP BY Gender;
+--SELECT SUM(Salary) FROM EmployeePayroll GROUP BY Gender;
 
-SELECT AVG(Salary) FROM EmployeePayroll WHERE Gender='M';
+--SELECT AVG(Salary) FROM EmployeePayroll WHERE Gender='M';
 
-SELECT COUNT(EmpName) FROM EmployeePayroll WHERE Gender='M';
+--SELECT COUNT(EmpName) FROM EmployeePayroll WHERE Gender='M';
 
+--use EmployeePayrollDatabase;
+
+--SELECT * FROM EmployeePayroll;
+
+ALTER TABLE EmployeePayroll ADD EmpPhNo VARCHAR(255),EmpAddress VARCHAR(255);
+
+ALTER TABLE EmployeePayroll DROP COLUMN EmpAddress;
+
+ALTER TABLE EmployeePayroll ADD EmpAddress VARCHAR(255) NOT NULL DEFAULT 'chennai',EmpDept VARCHAR(30) NOT NULL DEFAULT 'Engineering';
+
+SELECT * FROM EmployeePayroll;
 
