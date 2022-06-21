@@ -43,3 +43,7 @@ ALTER TABLE EmployeePayroll ADD EmpAddress VARCHAR(255) NOT NULL DEFAULT 'chenna
 
 SELECT * FROM EmployeePayroll;
 
+-- UC-> 9 --
+ALTER TABLE EmployeePayroll ADD BasicPay FLOAT,Deductions FLOAT,TaxablePay FLOAT,IncomeTax FLOAT,NetPay FLOAT;
+
+
