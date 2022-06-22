@@ -53,3 +53,48 @@ INSERT INTO EmployeePayroll VALUES
 
 INSERT INTO EmployeePayroll VALUES
 ('Terissa',35000, '2019-10-03','F',9989899810, 'Chennai', 'Sales',35000, 3000, 1000, 100, 30900);
+
+-- UC -> 11 -- ER QUERIES --
+
+CREATE TABLE Department(DeptId INT NOT NULL IDENTITY(1,1) PRIMARY KEY,DeptName VARCHAR(50) NOT NULL);
+
+INSERT INTO Department(DeptName) VALUES
+('Marketing'),
+('Sales'),
+('Development'),
+('Testing');
+
+ALTER TABLE EmployeePayroll ADD
+Payroll_id INT FOREIGN KEY REFERENCES EmployeePayroll(EmpId);
+
+CREATE TABLE EmpPayrollDetails (Payroll_id INT NOT NULL PRIMARY KEY IDENTITY(1,1),BasicPay FLOAT,Deductions FLOAT,TaxablePay FLOAT,IncomeTax FLOAT,NetPay FLOAT);
+
+select * from EmployeePayroll;
+
+ALTER TABLE EmployeePayroll DROP COLUMN Deductions,TaxablePay,IncomeTax,NetPay;
+
+INSERT INTO EmpPayrollDetails VALUES(32000,5000,27000,1000,26000),(40000,5000,35000,2000,33000);
+
+create table EmployeeDepts(
+EmpId int not null Foreign key references EmployeePayroll(EmpId),
+DeptId int not null Foreign key references Department(DeptId) 
+);
+
+UPDATE EmployeePayroll SET Payroll_id = 1 WHERE EmpId BETWEEN 1 AND 4;
+
+UPDATE EmployeePayroll SET Payroll_id = 2 WHERE EmpId BETWEEN 5 AND 6;
+
+UPDATE EmployeePayroll SET Payroll_id = 3 WHERE EmpName = 'Terissa';
+
+SELECT * FROM Department;
+
+INSERT INTO EmployeeDepts VALUES (1,4),(2,3),(3,3),(4,3),(5,2),(6,4),(7,1),(8,2);
+
+SELECT * FROM EmployeeDepts;
+
+-- UC -> 12 ---
+
+SELECT EmpId,EmpName,EmpAddress,BasicPay,NetPay FROM EmployeePayroll,EmpPayrollDetails WHERE EmployeePayroll.Payroll_id=EmpPayrollDetails.payroll_id;
+
+select Emp_id,Emp_Name,Income_Tax from EmployeeDetails,employee_payroll where Start_Date between CAST('1900-01-01' as date) and GETDATE() and  
+EmployeeDetails.Payroll_id=employee_payroll.id;
